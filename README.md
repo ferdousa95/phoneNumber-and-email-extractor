@@ -1,6 +1,7 @@
-author : Ferdous Ahmed Adit
+author : Ferdous Ahmed Adit\
 Date: July 3rd, 2021
 
+***phone_and_email.py***\
 Lets say you are looking at a webpage and you want to find all the numbers and 
 email addresses you can find in here. However, the webpage is quite long and as 
 a lazy/busy person, you want to just CTRL+A all the text, and CTRL+C copy and run 
