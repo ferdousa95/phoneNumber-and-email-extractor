@@ -50,22 +50,23 @@ matches = []
 
 for groups in phone_regex.findall(text):  # find the phone numbers
 
-    # CODE TESTING
-    print(groups())
-    print('\n\n')
-    # CODE TESTING END
-
     phoneNum = '-'.join([groups[1], groups[3], groups[5]])
     # area code
     # 3 digit
     # 4 digit
 
-if groups[8] != '':      # if extension is available
-    phoneNum += ' x' + groups[8]
-matches.append(phoneNum)  # keep the perfectly stitched phone number
+    if groups[8] != '':      # if extension is available
+        phoneNum += ' x' + groups[8]
+    matches.append(phoneNum)  # keep the perfectly stitched phone number
 
 for groups in email_regex.findall(text):  # find the email addresses
     matches.append(groups[0])
 
 
 # TODO: Copy results to the clipboard
+if len(matches) > 0:
+    pyperclip.copy('\n'.join(matches))
+    print('Copied to clipbaord:')
+    print('\n'.join(matches))
+else:
+    print('No phone umbers or email address found.')
